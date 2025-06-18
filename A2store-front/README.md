@@ -1,12 +1,50 @@
-# React + Vite
+# 🛍️ A2store 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenue sur **A2store**, une application e-commerce développée dans le cadre de mon Projet de Fin d'Études (PFE).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Objectif du projet
 
-## Expanding the ESLint configuration
+Développer une plateforme e-commerce moderne et responsive, avec une architecture en **frontend React**, **backend Django**, et **intégration Odoo** pour la gestion des données (produits, stock, etc.).
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+### Frontend :
+- React.js (avec Vite)
+- HTML5 / CSS3
+- JavaScript (ES6+)
+
+### Backend :
+- Django (XML API)
+
+### Intégration :
+- Odoo (via API)
+
+### Outils :
+- Git & GitHub
+- Visual Studio Code
+
+---
+
+## 🔄 Fonctionnalités principales
+
+- 🔍 Affichage des produits depuis Odoo
+- 🛒 Panier interactif
+- 📞 Pages Contact / À propos
+- 📦 Stock connecté à Odoo
+
+---
+
+## 🚀 Lancer le projet en local
+
+### 1. Cloner le dépôt
+```bash
+git clone https://github.com/khadouj02/PFE.git
+
+cd A2store-front
+npm install
+npm run dev
+
+cd ecommerce_backend
+pip install -r requirements.txt
+python manage.py runserver
