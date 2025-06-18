@@ -1,0 +1,10 @@
+.wishlist-icon {
+  font-size: 1.6rem;
+  color: #3d3c3c; /* gris par défaut */
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.wishlist-icon.active {
+  color: red; /* rouge si sélectionné */
+}

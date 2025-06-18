@@ -1,0 +1,134 @@
+.navbar{
+  margin: 0;
+  padding: 0;
+}
+
+/* -------- NAVBAR -------- */
+.navbar {
+  display: flex;
+  top: 0;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 7px 30px;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  position: sticky;
+  display: flex;
+  z-index: 1000;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 55px;
+}
+
+.logo img {
+  width: 60px;
+  height: auto;
+  object-fit: contain;
+}
+
+.search-bar {
+  padding: 8px 20px;
+  border: 1px solid #d1cece;
+  border-radius: 7px;
+  outline: none;
+  width: 250px;
+  font-size: 14px;
+}
+
+/* -------- LIENS DE NAVIGATION -------- */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: rgb(26, 25, 25);
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.2s ease;
+}
+
+.nav-links li a:hover {
+  color: #1a73e8;
+}
+
+/* -------- ICÔNES PANIER / FAVORIS -------- */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon {
+  font-size: 20px;
+  cursor: pointer;
+  color: rgb(3, 1, 27);
+  transition: color 0.2s ease;
+}
+
+.icon:hover {
+  color: #1a73e8;
+}
+
+/* -------- RESPONSIVE (optionnel) -------- */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .search-bar {
+    width: 150px;
+  }
+}
+.cart-icon-container {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-count-badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  padding: 12px 42px 12px 17px;
+  border: 1px solid #dfd2d2;
+  border-radius: 8px;
+  width: 500px;
+  background-color: #f2f2f2;
+  outline: none;
+}
+
+.search-btn {
+  position: absolute;
+  right: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #464545;
+  font-size: 16px;
+}

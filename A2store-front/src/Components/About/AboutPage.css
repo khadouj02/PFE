@@ -1,0 +1,94 @@
+.about-wrapper {
+  margin: 0;
+  padding: 40px 0 0 0;
+}
+
+.home-landing {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  font-family: "Arial", sans-serif;
+  margin-bottom: 0;
+}
+
+.left-image {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  height: 350px;
+  background: url("../src/assets/Landing.jpg") no-repeat center center;
+  background-size: cover;
+  border-radius: 25px;
+}
+
+.right-content {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  padding: 20px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-label {
+  text-transform: uppercase;
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+.highlight-box {
+  background: #dfe8df;
+  padding: 20px;
+  border-left: 6px solid #888;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin-bottom: 0;
+}
+
+.highlight-box .icon {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.highlight-box .brand {
+  font-weight: bold;
+  color: rgb(23, 17, 73);
+}
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: rgb(23, 17, 73);
+  border: none;
+  color: white;
+  padding: 12px 14px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  z-index: 999;
+}

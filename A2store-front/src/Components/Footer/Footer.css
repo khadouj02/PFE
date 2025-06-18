@@ -1,0 +1,13 @@
+.footer {
+  background-color: #12131b;
+  color: white;
+  padding: 20px;
+  margin-top: 0; /* très important pour coller */
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 14px;
+}

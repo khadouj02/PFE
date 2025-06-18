@@ -1,0 +1,56 @@
+.paiement-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 20px;
+    font-family: Arial;
+  }
+  
+  .paiement-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .paiement-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+  }
+  
+  .paiement-form input,
+  .paiement-form textarea {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+  }
+  
+  .paiement-form button {
+    background-color: #02b65c;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .commande-resume {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+  }
+  
+  .resume-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+  }
+  
+  .total {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: right;
+  }
+  
