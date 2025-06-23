@@ -16,7 +16,7 @@ function Navbar() {
     e.preventDefault();
     if (query.trim()) {
       navigate(`/search?q=${encodeURIComponent(query.trim())}`);
-      setQuery(""); // reset le champ si tu veux
+      setQuery("");
     }
   };
   const handleFooter = () =>{

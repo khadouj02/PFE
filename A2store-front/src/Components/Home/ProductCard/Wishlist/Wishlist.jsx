@@ -12,8 +12,6 @@ const Wishlist = () => {
     const stored = JSON.parse(localStorage.getItem("wishlist")) || [];
     setWishlist(stored);
   }, []);
-
-  // ✅ Fonction appelée lorsqu'on retire un produit du localStorage
   const handleRemoveFromWishlist = (productId) => {
     setWishlist((prev) => prev.filter((item) => item.id !== productId));
   };
@@ -23,7 +21,6 @@ const Wishlist = () => {
       <Navbar />
       <div className="products-section">
         <h2>Ma Wishlist</h2>
-
         {wishlist.length === 0 ? (
           <p style={{ textAlign: "center" }}>Votre wishlist est vide.</p>
         ) : (
@@ -44,5 +41,4 @@ const Wishlist = () => {
     </div>
   );
 };
-
 export default Wishlist;

@@ -1,9 +1,12 @@
 .product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 30px;
   padding: 20px 40px;
+  justify-content: center;
 }
+
+
 
 .product-item {
   display: flex;
