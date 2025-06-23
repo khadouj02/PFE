@@ -220,3 +220,28 @@ footer .social-icons a:hover {
   background: #eeeff0;
   opacity: 1;
 }
+
+/* .category-title {
+  background-color: #d6001c;
+  color: white;
+  padding: 1px 4px;               
+  border-radius: 10px;             
+  font-weight: normal;             
+  display: inline-block;
+  font-size: 3px;       
+  text-transform: none;
+  margin: 4px 0 2px 0;
+  line-height: 1.1;
+  font-family: inherit;
+} */
+
+.category-title {
+  background-color: #e30613; /* Rouge vif */
+  color: white;              /* Texte en blanc */
+  font-size: 20px;           /* Réduit la taille du texte */
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 10px;
+  width: fit-content;
+  margin: 20px 0 10px 20px;
+}

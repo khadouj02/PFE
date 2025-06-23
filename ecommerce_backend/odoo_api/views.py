@@ -40,7 +40,7 @@ def get_products(request):
             ODOO_DB, uid, ODOO_PASSWORD,
             'product.product', 'search_read',
             [[['sale_ok', '=', True]]],
-            {'fields': ['id', 'name', 'list_price', 'product_tmpl_id', 'description_sale', 'categ_id'],'limit':200}
+            {'fields': ['id', 'name', 'list_price', 'product_tmpl_id', 'description_sale', 'categ_id'],'limit':90}
         )
 
         if not products:

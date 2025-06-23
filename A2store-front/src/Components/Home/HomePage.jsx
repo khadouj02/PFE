@@ -16,11 +16,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./HomePage.css";
 import ProductCard from "./ProductCard/ProductCard";
+
 library.add(faHeartRegular);
 
 function HomePage() {
   const [products, setProducts] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("Tous");
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -34,32 +35,14 @@ function HomePage() {
     getProducts();
   }, []);
 
-  const categories = ["Tous", ...new Set(products.map((p) => p.categ_id))];
-  const filteredProducts = selectedCategory === "Tous"
-    ? products
-    : products.filter((p) => p.categ_id === selectedCategory);
-
-  const addToCart = (product) => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const existingProduct = cart.find((item) => item.id === product.id);
-
-    if (existingProduct) {
-      existingProduct.quantity += 1;
-    } else {
-      cart.push({
-        id: product.id,
-        name: product.name,
-        price: product.list_price,
-        quantity: 1,
-        image: `data:image/png;base64,${product.image_1920}`,
-      });
+  const categoryMap = new Map();
+  products.forEach((p) => {
+    const name = p.categ_id;
+    if (name && !categoryMap.has(name)) {
+      categoryMap.set(name, { id: name, name });
     }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-    setTimeout(() => {
-      window.location.href = "/cart";
-    }, 100);
-  };
+  });
+  const categoryList = Array.from(categoryMap.values());
 
   return (
     <div>
@@ -71,38 +54,62 @@ function HomePage() {
 
       {/* Hero Section */}
       <section className="home-section">
-          <Swiper
-            modules={[Autoplay, Pagination]}
-            autoplay={{ delay: 3000 }}
-            pagination={{ clickable: true }}
-            loop={true}
-            className="hero-swiper"
-          >
-            <SwiperSlide className="hero-slide">
-              <img src={swiper1} className="hero-img" />
-            </SwiperSlide>
-
-            <SwiperSlide className="hero-slide">
-                  <img src={swiper2} className="hero-img" />
-            </SwiperSlide>
-
-            <SwiperSlide className="hero-slide">
-              <img src={swiper3} className="hero-img" />
-            </SwiperSlide> 
-          </Swiper>
+        <Swiper
+          modules={[Autoplay, Pagination]}
+          autoplay={{ delay: 3000 }}
+          pagination={{ clickable: true }}
+          loop={true}
+          className="hero-swiper"
+        >
+          <SwiperSlide className="hero-slide">
+            <img src={swiper1} className="hero-img" alt="Slide 1" />
+          </SwiperSlide>
+          <SwiperSlide className="hero-slide">
+            <img src={swiper2} className="hero-img" alt="Slide 2" />
+          </SwiperSlide>
+          <SwiperSlide className="hero-slide">
+            <img src={swiper3} className="hero-img" alt="Slide 3" />
+          </SwiperSlide>
+        </Swiper>
       </section>
 
-      {/* Produits */}
+      {/* Produits par catégorie */}
       <section className="section products-section">
         <div className="container">
-          <div className="product-list">
-            {filteredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
+          {selectedCategory
+            ? (() => {
+                const filtered = products.filter(
+                  (p) => p.categ_id === selectedCategory
+                );
+                return (
+                  <div className="category-block">
+                    <h2 className="category-title">{selectedCategory}</h2>
+                    <div className="product-list">
+                      {filtered.map((product) => (
+                        <ProductCard key={product.id} product={product} />
+                      ))}
+                    </div>
+                  </div>
+                );
+              })()
+            : categoryList.map((category) => {
+                const filtered = products.filter(
+                  (p) => p.categ_id === category.id
+                );
+                return (
+                  <div key={category.id} className="category-block">
+                   <h2 className="category-title">{category.name.split('/').pop().trim()}</h2>
+                    <div className="product-list">
+                      {filtered.map((product) => (
+                        <ProductCard key={product.id} product={product} />
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
         </div>
       </section>
-      
+
       <section id="about"><AboutPage /></section>
       <section id="contact"><Contact /></section>
       <Footer />
