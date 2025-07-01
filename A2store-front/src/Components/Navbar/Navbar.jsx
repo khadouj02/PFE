@@ -49,8 +49,11 @@ function Navbar() {
         <ul className="nav-links">
           <li><Link to="/">Accueil</Link></li>
           <li><a href="#productList">Produits</a></li>
+          {/* <li ><a href="#categories">Catégories</a></li> */}
+          <li><Link to="/categories">Catégories</Link></li>
           <li> <a href="#about">À propos</a></li>
           <li ><a href="#contact-page">Contact</a></li>
+          
         </ul>
 
         <div className="navbar-right">

@@ -39,31 +39,29 @@ const CategoryMenu = ({ selectedCategory, onSelectCategory }) => {
   }, []);
 
   return (
-    <div className="category-container">
-      <div className="category-wrapper">
-        <button className="category-arrow left" onClick={() => scroll("left")}>
-          &#8249;
-        </button>
+   <div className="category-wrapper">
+  <button className="category-arrow left" onClick={() => scroll("left")}>
+    &#8249;
+  </button>
 
-        <div className="category-menu" ref={scrollRef}>
-          {categories.map((category) => (
-            <div
-              key={category.id}
-              className={`category-box ${selectedCategory === category.id ? "active" : ""}`}
-              onClick={() =>
-                onSelectCategory(selectedCategory === category.id ? null : category.id)
-              }
-            >
-              {category.name}
-            </div>
-          ))}
-        </div>
-
-        <button className="category-arrow right" onClick={() => scroll("right")}>
-          &#8250;
-        </button>
+  <div className="category-menu" ref={scrollRef}>
+    {categories.map((category) => (
+      <div
+        key={category.id}
+        className={`category-box ${selectedCategory === category.id ? "active" : ""}`}
+        onClick={() => onSelectCategory(selectedCategory === category.id ? null : category.id)}
+      >
+        {category.name}
       </div>
-    </div>
+    ))}
+  </div>
+
+  <button className="category-arrow right" onClick={() => scroll("right")}>
+    &#8250;
+  </button>
+</div>
+
+
   );
 };
 

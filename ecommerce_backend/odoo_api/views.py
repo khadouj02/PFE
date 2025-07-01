@@ -3,7 +3,7 @@ import xmlrpc.client
 from django.shortcuts import render
 
 # Informations Odoo
-ODOO_URL = 'http://192.168.0.33:8069'
+ODOO_URL = 'http://102.215.95.245:8069'
 ODOO_DB = 'oddo_db'
 ODOO_USER = 'commercial@a2ict.com'
 ODOO_PASSWORD = 'admin'
@@ -40,7 +40,7 @@ def get_products(request):
             ODOO_DB, uid, ODOO_PASSWORD,
             'product.product', 'search_read',
             [[['sale_ok', '=', True]]],
-            {'fields': ['id', 'name', 'list_price', 'product_tmpl_id', 'description_sale', 'categ_id'],'limit':90}
+            {'fields': ['id', 'name', 'list_price', 'product_tmpl_id', 'description_sale', 'categ_id'],'limit':500}
         )
 
         if not products:
@@ -96,6 +96,3 @@ def get_products(request):
 
     except Exception as e:
         return JsonResponse({"error": str(e)}, status=500)
-
-
-

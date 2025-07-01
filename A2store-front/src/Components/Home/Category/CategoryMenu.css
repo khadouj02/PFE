@@ -1,33 +1,20 @@
-.category-container {
-  background-color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 10px 0;
-  position: sticky;
-  top: 60px; /* adapte selon la hauteur de ta navbar */
-  z-index: 99;
-}
-
-.category-title {
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-}
-
 .category-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  gap: 5px;
 }
 
 .category-menu {
   display: flex;
-  overflow-x: auto;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
+  flex-wrap: nowrap;            /* tout en ligne */
+  overflow-x: auto;             /* scroll horizontal si nécessaire */
+  overflow-y: hidden;           /* pas de scroll vertical */
+  scrollbar-width: none;        /* cache scrollbar Firefox */
+  -ms-overflow-style: none;     /* cache scrollbar IE */
   gap: 10px;
   padding: 10px 0;
+  max-width: 90%;               /* espace pour les flèches */
 }
 
 .category-menu::-webkit-scrollbar {
@@ -48,13 +35,4 @@
 .category-box.active {
   background-color: #232323;
   color: #fff;
-}
-
-.category-arrow {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 5px 10px;
-  color: #555;
 }

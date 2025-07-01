@@ -7,6 +7,7 @@ import AboutPage from "./Components/About/AboutPage"
 import Contact from "./Components/Contact/Contact";
 import SearchResults from "./Components/Navbar/SearchResults";
 import Wishlist from "./Components/Home/ProductCard/Wishlist/Wishlist";
+import CategoriesPage from "./Components/Home/Category/CategoriesPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/product" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="categories" element={<CategoriesPage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/product/:id" element={<ProductDetail />} />

@@ -47,10 +47,10 @@ function HomePage() {
   return (
     <div>
       <Navbar />
-      <CategoryMenu
+      {/* <CategoryMenu
         selectedCategory={selectedCategory}
         onSelectCategory={setSelectedCategory}
-      />
+      /> */}
 
       {/* Hero Section */}
       <section className="home-section">
